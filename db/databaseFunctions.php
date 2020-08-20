@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+echo '<p class="white">databaseFunctions bien récupéré.</p>';
+
 function connect_database(){
 	
 	$host ="localhost";

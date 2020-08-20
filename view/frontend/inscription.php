@@ -7,23 +7,24 @@ include_once("../../insc_traitement.php");
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Inscription</title>
-        <link rel="stylesheet" href="grid.css">
+        <link rel="stylesheet" href="../../public/css/style.css">
     </head>
     <body>
    <div id="main_container">
-   <form action="" method="post">
-		<input type="text" name="nomUser" placeholder="Last user" /></br>
-		<input type="text" name="prenomUser" placeholder="First user" /></br>
-		<input type="email" name="emailUser" placeholder="Email user" /></br>
-		<input type="password" name="passwordUser" placeholder="password user" /></br>
-		<input type="text" name="telUser" placeholder="Tel user"  minlength="10" maxlength="13" /></br>
+   <form class="box" action="" method="post">
+        <h1 class="box-title">connexion</h1>
+		<input type="text" class="box-input" name="nomUser" placeholder="Last user" /></br>
+		<input type="text" class="box-input" name="prenomUser" placeholder="First user" /></br>
+		<input type="email" class="box-input" name="emailUser" placeholder="Email user" /></br>
+		<input type="password" class="box-input" name="passwordUser" placeholder="password user" /></br>
+		<input type="text" class="box-input" name="telUser" placeholder="Tel user"  minlength="10" maxlength="13" /></br>
 		<input type="date" name="naissanceUser" placeholder="date de naissance user" /></br>
-		<input type="text" name="numRueUser" placeholder="Num rue user" /></br>
-		<input type="text" name="nomRueUser" placeholder="Nom Rue user" /></br>
-		<input type="text" name="villeUser" placeholder="ville user" /></br>
-		<input type="text" name="cpUser" placeholder="Code postal user" /></br>
-		<input type="text" name="paysUser" placeholder="Pays user" /></br>
-		<input type="submit" name="valider" value="Valider"/>
+		<input type="text" class="box-input" name="numRueUser" placeholder="Num rue user" /></br>
+		<input type="text" class="box-input" name="nomRueUser" placeholder="Nom Rue user" /></br>
+		<input type="text" class="box-input" name="villeUser" placeholder="ville user" /></br>
+		<input type="text" class="box-input" name="cpUser" placeholder="Code postal user" /></br>
+		<input type="text" class="box-input" name="paysUser" placeholder="Pays user" /></br>
+        <input type="submit" class="box-button" name="valider" value="Valider"/>
 		</form>
    </div>
    <?php

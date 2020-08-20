@@ -1,30 +1,6 @@
-
-<?php
-include_once("../../insc_traitement.php");
-
-function getUserConnection($email,$pwd) {
-  $link = connect_database ();
-  $tab=[];
-  if($link){
-      $req = "SELECT * FROM user WHERE emailUser='$email' AND passwordUser='$pwd'";
-      $res = mysqli_query($link,$req);
-      if($res){
-          while($row = mysqli_fetch_array($res,MYSQLI_ASSOC)){
-              $tab[] = $row;
-          }
-      }
-  }
-  else{
-     // return false;
-      echo "problème de connexion";
-  }
-  return $tab;
-}
-?>
-
 <!DOCTYPE html>
-<html lang="fr">
-  <head>
+<html>
+<head>
       <title>
          Login
       </title>
@@ -36,57 +12,33 @@ function getUserConnection($email,$pwd) {
         <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="../../public/css/style.css">
   </head>
-  
-  <body>
-    <div id="main_container" class="container">
-       
-            <div class="heading">
-              <h2>Connectez-vous ci-dessous</h2>
-              <div class="divider"></div>
-            </div>
+<body>
 
-            
-    </div>
-        
-    <div class="row">
-        <div class="col-lg-10 col-lg-offset-1"> 
-            <form id="contact-form" action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" role="form">
-                <div class="row">
-                    <div class="col-md-6">
-                        <label for="email">E-Mail</label>
-                        <input type="email" id="email" class="form-control" placeholder="Votre email" name="email"
-                        value="<?php echo $email;?>" required>
-                        <p class="comment"><?php echo "$emailError";?></p>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-6">
-                        <label for="password">Mot de Passe</label>
-                        <input id="password" class="form-control" placeholder="Votre mot de passe" name="password" 
-                        value="<?php echo $password;?>" required> 
-                        <p class="comment"><?php echo "$passwordError";?></p>
-                    </div>
-                </div>
-          </form>
-
-            <div class="flex-container">
-                <input type="submit" class="btn btn-success btn-lg" name="valider" value="Login">
-                <input type="submit" class="btn btn-warning btn-lg" name="perdu" value="Mot de passe perdu !"/>
-            </div>
-
-        </div>
-    </div>
 <?php
-    if(isset($_POST['valider'])){
+
+include_once("../../insc_traitement.php");
+include_once("../../model/userFunctions.php");
+
+if(isset($_POST['valider'])){
     if(connexion()){
-        echo "tout bon";
-     // header('Location: profil.php');
+        echo '<p class="white">la connexion a fonctionné</p>';
+      // header('Location: profil.php');
     }
     else{
-        echo ("this user doesn't exit");
+        echo '<p class="white">cet utilisateur n existe pas !</p>';
+        // header('Location: inscription.php');
     }
  }
- ?>
-  </body>
+?>
+
+<form class="box" action="" method="post" name="login">
+<h1 class="box-title">connexion</h1>
+<input type="email" class="box-input" name="emailUser" placeholder="Votre email">
+<input type="passwordUser" class="box-input" name="passwordUser" placeholder="Mot de passe">
+<input type="submit" value="connexion " name="valider" class="box-button">
+<p class="box-register">Première fois sur ce site ? <a href="inscription.php">Inscrivez-vous !</a></p>
+</form>
+</body>
+
+
 </html>

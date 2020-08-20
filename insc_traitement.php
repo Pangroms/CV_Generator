@@ -1,7 +1,8 @@
 <?php
 include_once('db/databaseFunctions.php');
+echo '<p class="white">insc_traitement bien récupéré.</p>';
 
-echo "le fichier est bien appelé";
+// echo '<p class="white">le fichier est bien appelé</p>';
 
 function connexion() {
 	//connect to database
@@ -19,16 +20,19 @@ function connexion() {
 		$emailUser = $_POST['mailUser'];
 		$passwordUser = $_POST['passwordUser'];
 		$req = "SELECT * FROM user WHERE passwordUser = '$passwordUser' AND emailUser = '$emailUser'";
-		// execute verication query
+		 
+		// execute verification query
 		$res = mysqli_query($link, $req);
 		if($res) {
 			$userExist = mysqli_fetch_row($res);
-			if(!userExist){
+			//var_dump($res);
+			if(!$userExist){
 				return false;
 			}
 			else {
 				$_SESSION['userInfo'] = $userExist;
-				// header('Location: profil.php');
+				 header('Location: profil.php');
+				//var_dump($userExist);
 				return true;
 			}
 		}

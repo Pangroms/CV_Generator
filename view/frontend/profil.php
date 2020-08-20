@@ -16,7 +16,7 @@
   <body>
     <div id="main_container" class="container">
        
-            <div class="heading">
+            <div class="heading white">
               <h2>Profil</h2>
               <div class="divider"></div>
             </div>
@@ -30,22 +30,41 @@
                 <div class="row">
                     <div class="col-md-6">
                         
-                        <p class="comment">MON PROFIL</p>
+                        <p class="white">MON PROFIL</p>
+
+                        <ul>
+                          <li><?php echo $_POST['prenomUser']; ?></li>
+                          <li><?php echo $_POST['nomUser']; ?></li>
+                          <li><?php echo $_POST['naissanceUser']; ?></li>
+                          <li><?php echo $_POST['emailUser']; ?></li>
+                          <li><?php echo $_POST['passwordUser']; ?></li>
+                          <li><?php echo $_POST['telUser']; ?></li>
+                          <li><?php echo $_POST['numRueUser']; ?></li>
+                          <li><?php echo $_POST['nomRueUser']; ?></li>
+                          <li><?php echo $_POST['villeUser']; ?></li>
+                          <li><?php echo $_POST['cpUser']; ?></li>
+                          <li><?php echo $_POST['paysUser']; ?></li>
+                        </ul>
+
+                        <ul>
+                          <li></li>
+                          <li></li>
+                          <li></li>
+                          <li></li>
+                          <li></li>
+                          <li></li>
+                          <li></li>
+                          <li></li>
+                          <li></li>
+                          <li></li>
+                        </ul>
                     </div>
                 </div>
 
         </div>
     </div>
 <?php
-    if(isset($_POST['valider'])){
-    if(connexion()){
-        echo "tout bon";
-     //header('Location: profil.php');
-    }
-    else{
-        echo ("this user doesn't exit");
-    }
- }
+   
  ?>
   </body>
 </html>
