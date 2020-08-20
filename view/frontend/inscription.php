@@ -11,7 +11,7 @@ include_once("../../insc_traitement.php");
     </head>
     <body>
    <div id="main_container">
-   <form class="box" action="" method="post">
+   <form class="box" action="profil.php" method="post">
         <h1 class="box-title">connexion</h1>
 		<input type="text" class="box-input" name="nomUser" placeholder="Last user" /></br>
 		<input type="text" class="box-input" name="prenomUser" placeholder="First user" /></br>
@@ -32,13 +32,36 @@ include_once("../../insc_traitement.php");
     if (insert_user() == 403) {
         echo "user exist already";
     }
-    else {header('Location: addEtude.php');
+    // else {header('Location: addEtude.php');
+        else {header('Location: profil.php');
     }
 }
-   //if(isset($_POST['valider'])){
-   //    insert_user();
-   //    header('Location: addEtude.php');
-   // }
+
+
+// limite des valeurs à insérer par les utilisateurs
+   
+if (strlen($_POST['nomUser'])>40) // taille du nom trop long
+    {
+        echo "Nom non conforme.";
+    }
+
+    echo htmlentities($_POST['nomUser']); // pour la protection des données
+
+    // ou on crée une variable et on insère le code dedans tout de suite
+    $prenom = htmlentities($_POST['nomUser']);
+
+    echo $prenom;
+
+
+if (strlen($_POST['prenomUser'])>40)
+    {
+        echo "Prénom non conforme.";
+    }
+
+
+
+
+
    ?>
     </body>
 </html>

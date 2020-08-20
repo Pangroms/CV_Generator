@@ -1,0 +1,165 @@
+@charset "UTF-8";
+/* CSS Document */
+body {
+	font-family: 'Calibri', arial;
+	width:100%;
+	background-color: #eae9e7;
+}
+
+#principal{
+	
+	width:80%;
+	margin : auto;
+	padding:2%;
+	background-color:rgb(234,233,231);
+		
+}
+#perso{
+	
+	width : 30%;
+	height : 220%;
+	background-color : #5DA4DA;
+	margin-right:2%;
+	box-shadow:1px 6px 6px 0.2em #AAA4DA ;
+	border: none;
+	padding-top : 1.5em;	
+}
+
+#detail{
+	width : 60%;
+	top:0px;
+}
+
+#perso,#detail{
+	display:inline-block;
+	vertical-align:top;
+}
+
+#experience,#etude, #interet, #contact {
+	width:100%;
+	background-color:white;
+	margin-bottom:3%;
+	padding-bottom:5%;
+	box-shadow:1px 6px 6px 0.2em lightgray ;	
+}
+
+hr {
+	border-bottom:1px solid grey;
+	margin-left:30%;
+	margin-right:15%;
+}
+
+#detail hr {
+	border-bottom:1px solid grey;
+	margin-top: 20px;
+	margin-bottom:20px;
+	margin-left:50px;
+	margin-right:10px;
+}
+
+p {
+	margin-left:10%;
+	margin-right:10%;
+	text-align:justify;
+	}
+
+p, span {
+	margin-bottom:20px;
+	text-align:justify;
+	}
+
+.icone, span {
+	display:inline-block;
+	font-size:0.8em;
+	vertical-align:top;
+	}
+	
+.icone{
+		width:20%;
+		margin-right:5%;
+		}
+				
+span{
+		width:60%;
+		}
+	
+h1{
+	font-size:2em;
+	font-weight: bold;
+	margin-left:1.5em;
+	margin-top:0;
+}
+	
+#menu{
+	top:2%;
+	left:2%;
+	margin-top: -14%;
+	z-index:1;
+	width:20%;
+	}
+	
+#photo{
+	position : relative;
+	margin-top:-55px;
+	margin-left:-15px;
+	top:0px;
+	left:-10px;
+	width:100%;
+	}
+
+#perso img{
+	position : relative;
+	margin-left :10px;
+	}
+	
+#detail .icone2{
+	position : absolute;
+	margin-left :8px;
+	margin-top :7px;
+	}
+	
+#perso img+img{
+	position : top;
+	margin-left :-0px;
+	margin-right :-0px;
+	width:100%; 
+	height:auto;
+}
+
+label, input {
+	margin-left :8px;
+	margin-bottom :-30px;
+	width:85%
+	}
+	
+figure {
+    padding-bottom: 1.5em;
+    margin: 0;
+    position: relative;
+}
+figcaption {
+    position: absolute;
+    bottom: 2em;
+    left: 1em;
+    font-size: 1.25em;
+    font-style: italic;
+}
+
+titre{
+	font-size: 1em;
+	margin-left:10%;
+	font-weight:bold;
+}
+
+.date {
+	font-size: 0.8em;
+    color: #5DA4DA;
+	margin-left:10%;
+	margin-top:2%;
+	text-transform: uppercase;
+	}
+	
+.contenu {
+	font-size: 0.8em;
+    color: #7d7c7b;
+	}

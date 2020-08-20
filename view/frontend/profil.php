@@ -1,3 +1,16 @@
+<?php
+if (!$_SESSION){
+  session_start();
+}
+print_r($_SESSION)
+// mes compétences se trouvent dans la session dans la case userCompetence
+$mes_competences = $_SESSION['userCompetence']
+foreach ($mes_competences as $key => $value){
+  if($key == "libCompetence")
+  echo $value;
+}
+   
+ ?>
 <!DOCTYPE html>
 <html lang="fr">
   <head>
@@ -32,39 +45,12 @@
                         
                         <p class="white">MON PROFIL</p>
 
-                        <ul>
-                          <li><?php echo $_POST['prenomUser']; ?></li>
-                          <li><?php echo $_POST['nomUser']; ?></li>
-                          <li><?php echo $_POST['naissanceUser']; ?></li>
-                          <li><?php echo $_POST['emailUser']; ?></li>
-                          <li><?php echo $_POST['passwordUser']; ?></li>
-                          <li><?php echo $_POST['telUser']; ?></li>
-                          <li><?php echo $_POST['numRueUser']; ?></li>
-                          <li><?php echo $_POST['nomRueUser']; ?></li>
-                          <li><?php echo $_POST['villeUser']; ?></li>
-                          <li><?php echo $_POST['cpUser']; ?></li>
-                          <li><?php echo $_POST['paysUser']; ?></li>
-                        </ul>
 
-                        <ul>
-                          <li></li>
-                          <li></li>
-                          <li></li>
-                          <li></li>
-                          <li></li>
-                          <li></li>
-                          <li></li>
-                          <li></li>
-                          <li></li>
-                          <li></li>
-                        </ul>
                     </div>
                 </div>
 
         </div>
     </div>
-<?php
-   
- ?>
+
   </body>
 </html>

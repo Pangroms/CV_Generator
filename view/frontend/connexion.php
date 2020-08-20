@@ -14,11 +14,21 @@
   </head>
 <body>
 
+<form class="box" action="" method="post" name="login">
+<h1 class="box-title">connexion</h1>
+<input type="email" class="box-input" name="emailUser" placeholder="Votre email">
+<input type="passwordUser" class="box-input" name="passwordUser" placeholder="Mot de passe">
+<input type="submit" value="connexion" name="valider" class="box-button">
+<p class="box-register">Première fois sur ce site ? <a href="inscription.php">Inscrivez-vous !</a></p>
+</form>
+
 <?php
 
 include_once("../../insc_traitement.php");
 include_once("../../model/userFunctions.php");
 
+
+// avec isset, on demande a afficher la suite seulement si le bouton est cliqué
 if(isset($_POST['valider'])){
     if(connexion()){
         echo '<p class="white">la connexion a fonctionné</p>';
@@ -31,14 +41,5 @@ if(isset($_POST['valider'])){
  }
 ?>
 
-<form class="box" action="" method="post" name="login">
-<h1 class="box-title">connexion</h1>
-<input type="email" class="box-input" name="emailUser" placeholder="Votre email">
-<input type="passwordUser" class="box-input" name="passwordUser" placeholder="Mot de passe">
-<input type="submit" value="connexion " name="valider" class="box-button">
-<p class="box-register">Première fois sur ce site ? <a href="inscription.php">Inscrivez-vous !</a></p>
-</form>
 </body>
-
-
 </html>

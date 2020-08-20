@@ -2,8 +2,6 @@
 include_once('db/databaseFunctions.php');
 echo '<p class="white">insc_traitement bien récupéré.</p>';
 
-// echo '<p class="white">le fichier est bien appelé</p>';
-
 function connexion() {
 	//connect to database
 	$link = connect_database();
@@ -31,8 +29,8 @@ function connexion() {
 			}
 			else {
 				$_SESSION['userInfo'] = $userExist;
-				 header('Location: profil.php');
-				//var_dump($userExist);
+				// header('Location: profil.php');
+				var_dump($userExist);
 				return true;
 			}
 		}
